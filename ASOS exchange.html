@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ASOS exchange</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#07070a;--card:#111116;--line:#25252d;--red:#e11d2e;--red2:#ff4757;--tx:#f4f4f6;--mut:#9a9aa6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:radial-gradient(900px 400px at 20% -10%,#3a0710 0,transparent 60%),var(--bg);color:var(--tx);font-family:Vazirmatn,"Noto Naskh Arabic",Tahoma,"Segoe UI",Arial,sans-serif;line-height:1.8}
+.wrap,footer{position:relative;z-index:1}
+.wrap{max-width:1000px;margin:auto;padding:0 16px}
+.bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:48px 48px}
+.bg .o{position:absolute;border-radius:50%;filter:blur(90px);opacity:.45;animation:fl 14s ease-in-out infinite alternate}
+.o1{width:440px;height:440px;background:#e11d2e;top:-140px;left:-100px}
+.o2{width:380px;height:380px;background:#7a0612;bottom:-120px;right:-110px;animation-delay:-6s}
+.bg span{position:absolute;top:0;color:#e11d2e26;font-weight:800;animation:up 24s linear infinite;direction:ltr}
+@keyframes fl{to{transform:translate(40px,30px) scale(1.15)}}
+@keyframes up{from{transform:translateY(110vh) rotate(0)}to{transform:translateY(-25vh) rotate(40deg)}}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;direction:ltr}
+.logo i{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--red),#7a0612);display:grid;place-items:center;font-style:normal;box-shadow:0 0 18px #e11d2e66}
+.logo span{color:var(--red2)}
+button{font:inherit;cursor:pointer}
+.snd{background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.hero{padding:34px 0 10px}
+.hero h1{margin:0 0 8px;font-size:clamp(26px,5vw,42px)}
+.hero h1 b{color:var(--red2)}
+.hero p{margin:0;color:var(--mut)}
+.badge{display:inline-flex;gap:8px;align-items:center;font-size:13px;color:var(--mut);border:1px solid var(--line);border-radius:99px;padding:5px 12px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 8px var(--red)}
+.live .dot{background:#2ecc71;box-shadow:0 0 8px #2ecc71}
+.tick{overflow:hidden;border-block:1px solid var(--line);margin:18px 0;background:#0c0c10;direction:ltr}
+.tick div{display:flex;gap:34px;white-space:nowrap;padding:10px 0;width:max-content;animation:mv 40s linear infinite;font-size:14px}
+.tick b{color:var(--red2)}
+@keyframes mv{to{transform:translateX(-50%)}}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.card h2{margin:0 0 12px;font-size:17px}
+label{display:block;font-size:13px;color:var(--mut);margin:10px 0 4px}
+input,select{width:100%;background:#0a0a0e;color:var(--tx);border:1px solid var(--line);border-radius:10px;padding:11px;font:inherit}
+input[type=number]{direction:ltr;text-align:right}
+input:focus,select:focus{outline:2px solid var(--red);border-color:transparent}
+.res{margin-top:14px;padding:14px;border-radius:12px;background:linear-gradient(135deg,#2a0509,#120a0c);border:1px solid #5a0f19;font-size:22px;font-weight:700;word-break:break-word}
+.res small{display:block;color:var(--mut);font-weight:400;font-size:13px}
+.sw{margin-top:10px;background:var(--red);border:0;color:#fff;border-radius:10px;padding:9px 14px}
+.rf{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:14px;padding:12px 16px;font-size:14px}
+.bar{height:5px;background:#25252d;border-radius:5px;overflow:hidden;flex:1;min-width:110px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#7a0612,var(--red2));width:0;transition:width 1s linear}
+.tw{margin:16px 0;overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th,td{padding:12px 14px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:12px;color:var(--mut);background:#0c0c10;position:sticky;top:0}
+tr:hover td{background:#1a0a0d}
+td.n{direction:ltr;text-align:right}
+td.b{color:#2ecc71;font-weight:700}td.s{color:var(--red2);font-weight:700}
+.cc{display:flex;gap:10px;align-items:center}
+.ic{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--red),#5c0a14);display:grid;place-items:center;font-weight:800;font-size:12px;box-shadow:0 0 10px #e11d2e55;flex:none;color:#fff;direction:ltr}
+.up{color:#2ecc71}.dn{color:var(--red2)}
+.fl{animation:fh 1.6s}@keyframes fh{from{background:#e11d2e66}}
+.note{font-size:12px;color:var(--mut);margin:6px 0 24px}
+footer{border-top:1px solid var(--line);padding:22px 0 28px;text-align:center;color:var(--mut);font-size:14px}
+footer b{color:var(--red2);letter-spacing:1px}
+.clk{margin-bottom:14px;font-size:14px;color:var(--tx);gap:10px}
+.clk #tm{color:var(--red2);font-weight:800;letter-spacing:1px}
+input,select{font-size:16px}
+button:focus-visible,a:focus-visible{outline:3px solid var(--red2);outline-offset:2px}
+@media(pointer:coarse){button,input,select{min-height:44px}}
+@media(max-width:600px){
+ .wrap{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right))}
+ .logo{font-size:18px}.logo i{width:32px;height:32px}
+ .hero{padding:22px 0 6px}
+ .card{padding:14px;border-radius:14px}
+ .rf{gap:10px;font-size:13px}.rf .bar{flex-basis:100%;order:9}
+ .res{font-size:19px}
+ table{min-width:500px}th,td{padding:10px 8px;font-size:13px}
+ .ic{width:30px;height:30px;font-size:10px}
+ td:first-child,th:first-child{position:sticky;right:0;background:var(--card);z-index:2;box-shadow:-6px 0 8px #0006}
+ th:first-child{background:#0c0c10}
+ .o1,.o2{width:260px;height:260px}
+}
+@media(min-width:601px) and (max-width:1100px){.wrap{max-width:900px}.grid{gap:14px}}
+@media(min-width:1600px){.wrap{max-width:1400px}}
+@media(min-width:1900px){.wrap{zoom:1.35}}
+@media(min-width:2600px){.wrap{zoom:2}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+</style>
+</head>
+<body>
+<div class="bg" id="bg"><div class="o o1"></div><div class="o o2"></div></div>
+<div class="wrap">
+<header>
+ <div class="logo"><i>₪</i><div>ASOS <span>exchange</span></div></div>
+ <button class="snd" id="snd">🔊 دەنگ</button>
+</header>
+
+<section class="hero">
+ <div class="badge clk">📅 <span id="dt"></span> <span>·</span> 🕒 <span id="tm" dir="ltr"></span></div>
+ <h1>نرخێن <b>دراڤێن</b> جیهانێ</h1>
+ <p>کڕین و فرۆتن ب دیناری عێراقی (IQD) · هەمی دراڤێن سەرەکی یێن جیهانێ</p>
+</section>
+
+<div class="card rf"><div class="badge" id="st"><span class="dot"></span><span id="stt">نرخێن سەرچاڤە</span></div><div>دوماهیک نوکرن: <b id="lu">-</b></div><div>نوکرنا دی: <b id="cd">60</b> چرکە</div><div class="bar"><i id="pb"></i></div><button class="sw" id="rb" style="margin:0">↻ نوکرن</button></div>
+
+<div class="tick"><div id="tk"></div></div>
+
+<div class="grid">
+ <div class="card">
+  <h2>🧮 ژمێرەرێ گوهۆڕینێ</h2>
+  <label>بڕ</label><input id="amt" type="number" value="100" min="0" step="any" inputmode="decimal">
+  <label>ژ</label><select id="from"></select>
+  <label>بۆ</label><select id="to"></select>
+  <button class="sw" id="swp">⇄ ڤەگوهۆڕە</button>
+  <div class="res" id="out"></div>
+ </div>
+ <div class="card">
+  <h2>⚙️ نرخێ سیکا زاخۆ / دهۆکێ (IQD)</h2>
+  <label>1 دۆلار (USD) = چەند دینار (IQD)</label><input id="usd" type="number" value="1691.25" step="0.25" inputmode="numeric">
+  <label>جیاوازیا کڕین / فرۆتنێ (%)</label><input id="sp" type="number" value="0.37" step="0.1" inputmode="decimal">
+  <p class="note">نرخێ دۆلارێ ل گۆر سووقا عێراقێ ڕاست بکە، هەمی نرخێن دی ب خۆکار دهێنە گوهۆڕین.</p>
+ </div>
+</div>
+
+<div style="margin-top:16px"><input id="q" placeholder="🔎 گەڕیان: USD، یورۆ، تورکی..."></div>
+<div class="tw"><table>
+<thead><tr><th>دراڤ</th><th>کۆد</th><th>بڕ</th><th>کڕین (IQD)</th><th>فرۆتن (IQD)</th><th>گوهۆڕین</th></tr></thead>
+<tbody id="tb"></tbody></table></div>
+<p class="note">ئەڤ نرخێن ل ڤێرە دهێنە پیشاندان سەرچاڤە نە. بەری مامەلێ، ب نرخێ ڕۆژانە یێ سەرافێ خۆ ڤە بەراورد بکە.</p>
+</div>
+
+<footer>
+ <div class="wrap">© 2026 ASOS exchange · هەمی ماف پارێزراینە<br>
+ دیزاینەر و پەرەپێدەر: <b>HADIIYAHYA77</b></div>
+</footer>
+
+<script>
+var C=[
+["USD","دۆلارێ ئەمریکی","🇺🇸",1],["EUR","یورۆ","🇪🇺",0.86],["GBP","پاوەندێ بریتانی","🇬🇧",0.75],["TRY","لیرەیا تورکی","🇹🇷",42],
+["SAR","ریالێ سعودی","🇸🇦",3.75],["AED","دیرهەمێ ئیماراتی","🇦🇪",3.6725],["KWD","دیناری کویتی","🇰🇼",0.306],["QAR","ریالێ قەتەری","🇶🇦",3.64],
+["BHD","دیناری بەحرەینی","🇧🇭",0.376],["OMR","ریالێ عومانی","🇴🇲",0.385],["JOD","دیناری ئوردنی","🇯🇴",0.709],["EGP","پاوەندێ میسری","🇪🇬",55.3],
+["IRR","ریالێ ئێرانی","🇮🇷",1100000],["LBP","لیرەیا لوبنانی","🇱🇧",89500],["ILS","شێکلێ ئیسرائیلی","🇮🇱",3.3],["RUB","ڕۆبلێ ڕووسی","🇷🇺",82],
+["UAH","هریڤنیایا ئۆکرانی","🇺🇦",41.5],["PLN","زلۆتیێ پۆلەندی","🇵🇱",3.7],["CZK","کرۆنا چێکی","🇨🇿",21],["HUF","فۆرینتێ مەجەری","🇭🇺",335],
+["RON","لەیێ ڕۆمانی","🇷🇴",4.4],["SEK","کرۆنا سویدی","🇸🇪",9.4],["NOK","کرۆنا نەرویجی","🇳🇴",10.1],["DKK","کرۆنا دانیمارکی","🇩🇰",6.45],
+["CHF","فرانکێ سویسری","🇨🇭",0.8],["CAD","دۆلارێ کەنەدی","🇨🇦",1.4],["AUD","دۆلارێ ئوسترالی","🇦🇺",1.53],["NZD","دۆلارێ نیوزیلەندی","🇳🇿",1.75],
+["JPY","یەنێ یابانی","🇯🇵",150],["CNY","یوانێ چینی","🇨🇳",7.12],["KRW","وۆنێ کۆریایا باشوور","🇰🇷",1430],["HKD","دۆلارێ هۆنگ کۆنگی","🇭🇰",7.78],
+["SGD","دۆلارێ سنگاپوری","🇸🇬",1.29],["MYR","رینگیتێ مالیزی","🇲🇾",4.2],["THB","باهتێ تایلەندی","🇹🇭",32.4],["IDR","ڕوپیا ئیندۆنیزی","🇮🇩",16600],
+["PHP","پێسۆیێ فلیپینی","🇵🇭",58],["VND","دۆنگێ ڤیێتنامی","🇻🇳",26300],["INR","ڕوپیا هندی","🇮🇳",88],["PKR","ڕوپیا پاکستانی","🇵🇰",281],
+["BDT","تاکایێ بەنگلادیشی","🇧🇩",122],["AFN","ئەفغانییێ ئەفغانستانی","🇦🇫",66],["KZT","تەنگەیێ کازاخی","🇰🇿",520],["UZS","سۆمێ ئوزبەکی","🇺🇿",12000],
+["GEL","لاریێ گورجی","🇬🇪",2.7],["AMD","درامێ ئەرمەنی","🇦🇲",383],["AZN","مانەتێ ئازەربایجانی","🇦🇿",1.7],["BRL","ریالێ بەرازیلی","🇧🇷",5.4],
+["MXN","پێسۆیێ مەکسیکی","🇲🇽",18.4],["ARS","پێسۆیێ ئەرجەنتینی","🇦🇷",1450],["ZAR","ڕاندێ ئەفریقیایا باشوور","🇿🇦",17.3],["NGN","نایرایێ نیجیری","🇳🇬",1450],
+["MAD","دیرهەمێ مەغریبی","🇲🇦",9.2],["DZD","دیناری جەزایری","🇩🇿",130],["TND","دیناری تونسی","🇹🇳",2.9],["LYD","دیناری لیبی","🇱🇾",5.4],
+["SDG","پاوەندێ سودانی","🇸🇩",600],["KES","شیلینگێ کینی","🇰🇪",129],["ETB","بیرێ ئەتیوپی","🇪🇹",150],["GHS","سیدیێ غانی","🇬🇭",12]
+];
+var S={USD:"$",EUR:"€",GBP:"£",TRY:"₺",SAR:"﷼",AED:"د.إ",KWD:"د.ك",QAR:"ر.ق",BHD:"د.ب",OMR:"ر.ع",JOD:"د.أ",EGP:"E£",IRR:"﷼",LBP:"ل.ل",ILS:"₪",RUB:"₽",UAH:"₴",PLN:"zł",CZK:"Kč",HUF:"Ft",RON:"lei",SEK:"kr",NOK:"kr",DKK:"kr",CHF:"Fr",CAD:"C$",AUD:"A$",NZD:"NZ$",JPY:"¥",CNY:"¥",KRW:"₩",HKD:"HK$",SGD:"S$",MYR:"RM",THB:"฿",IDR:"Rp",PHP:"₱",VND:"₫",INR:"₹",PKR:"₨",BDT:"৳",AFN:"؋",KZT:"₸",UZS:"UZS",GEL:"₾",AMD:"֏",AZN:"₼",BRL:"R$",MXN:"Mex$",ARS:"AR$",ZAR:"R",NGN:"₦",KES:"KSh",ETB:"Br",GHS:"GH₵"};
+var D={},F={},R={};C.forEach(function(c){R[c[0]]=c[3]});
+var O={EUR:1,GBP:1,TRY:1,CAD:1,AUD:1,CHF:1};R.EUR=100/111.875;R.GBP=100/132.125;R.TRY=49.6;R.CAD=100/69.5;R.AUD=100/68.5;R.CHF=100/120.5;
+var sndOn=true,ac;
+function beep(f,d){if(!sndOn)return;try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();var o=ac.createOscillator(),g=ac.createGain();o.type="sine";o.frequency.value=f||620;g.gain.value=.05;o.connect(g);g.connect(ac.destination);o.start();g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+(d||.12));o.stop(ac.currentTime+(d||.12))}catch(e){}}
+var $=function(i){return document.getElementById(i)};
+function bgs(){var s=["$","€","£","₺","¥","₪","₹","₽","ع.د"],h="";for(var i=0;i<12;i++)h+='<span style="left:'+(i*8.5)+'%;animation-delay:-'+(i*2.3)+'s;font-size:'+(36+i%4*14)+'px">'+s[i%s.length]+'</span>';$("bg").insertAdjacentHTML("beforeend",h)}
+function iqd(c){return Number($("usd").value||1690)/R[c]}
+function fmt(n){return n>=100?Math.round(n).toLocaleString("en-US"):n.toLocaleString("en-US",{maximumFractionDigits:n<1?4:2})}
+function table(){
+ var q=$("q").value.toLowerCase(),sp=Number($("sp").value||0)/100,h="";
+ C.forEach(function(c){
+  if(q&&(c[0]+c[1]).toLowerCase().indexOf(q)<0)return;
+  var v=iqd(c[0]),n=v<0.5?1000:1,p=v*n,ch=D[c[0]]||0;
+  h+='<tr><td><div class="cc"><span class="ic">'+(S[c[0]]||c[0])+'</span><div>'+c[2]+' '+c[1]+'</div></div></td><td class="n">'+c[0]+'</td><td class="n">'+n+'</td><td class="n b">'+fmt(p*(1-sp))+'</td><td class="n s">'+fmt(p*(1+sp))+'</td><td class="n '+(ch>0?'up':ch<0?'dn':'')+(F[c[0]]?' fl':'')+'">'+(ch>0?'▲ ':ch<0?'▼ ':'– ')+Math.abs(ch).toFixed(2)+'%</td></tr>'});
+ $("tb").innerHTML=h||'<tr><td colspan="6">چو نەهاتە دیتن</td></tr>';
+}
+function conv(){
+ var a=Number($("amt").value||0),f=$("from").value,t=$("to").value;
+ var iq=f=="IQD"?a:a*iqd(f),r=t=="IQD"?iq:iq/iqd(t);
+ $("out").innerHTML='<span dir="ltr">'+fmt(r)+" "+t+'</span><small dir="ltr">'+fmt(a)+" "+f+" =</small>";
+}
+function ticker(){
+ var s="";["EUR","GBP","TRY","SAR","AED","KWD","IRR","JPY","CAD","CHF"].forEach(function(c){var v=iqd(c),n=v<0.5?1000:1;s+='<span>'+n+" "+c+' = <b>'+fmt(v*n)+'</b> IQD</span>'});
+ $("tk").innerHTML=s+s;
+}
+function all(){table();conv();ticker()}
+function init(){
+ bgs();
+ var o='<option value="IQD">🇮🇶 IQD – دیناری عێراقی</option>';
+ C.forEach(function(c){o+='<option value="'+c[0]+'">'+c[2]+" "+c[0]+" – "+c[1]+'</option>'});
+ $("from").innerHTML=o;$("to").innerHTML=o;$("from").value="USD";$("to").value="IQD";
+ ["amt","usd","sp","q"].forEach(function(i){$(i).addEventListener("input",all)});
+ ["from","to"].forEach(function(i){$(i).addEventListener("change",function(){beep(700);conv()})});
+ $("swp").onclick=function(){var a=$("from").value;$("from").value=$("to").value;$("to").value=a;beep(540);conv()};
+ $("snd").onclick=function(){sndOn=!sndOn;this.textContent=sndOn?"🔊 دەنگ":"🔇 بێ دەنگ";beep(800)};
+ document.addEventListener("click",function(e){if(e.target.closest("button"))beep(520,.08)});
+ all();live();
+}
+var SEC=60,left=SEC,u0=1691.25;
+function live(){
+ try{fetch("https://open.er-api.com/v6/latest/USD").then(function(r){return r.json()}).then(function(d){
+  if(!d||!d.rates)return;D={};F={};
+  Object.keys(R).forEach(function(k){var n=d.rates[k];if(n&&k!="USD"&&!O[k]){var ch=(R[k]/n-1)*100;if(Math.abs(ch)>0.0001){D[k]=ch;F[k]=1}R[k]=n}});
+  setLU(true);all()
+ }).catch(function(){setLU(false)})}catch(e){setLU(false)}
+}
+function setLU(ok){$("lu").textContent=hms(new Date());$("st").className=ok?"badge live":"badge";$("stt").textContent=ok?"راستەوخۆ · نرخێن جیهانێ هاتنە نوکرن":"نرخێن سەرچاڤە · گرێدانا راستەوخۆ نینە"}
+function tick(){left--;if(left<=0){left=SEC;live();liveIQ()}$("cd").textContent=left;$("pb").style.width=((SEC-left)/SEC*100)+"%"}
+setInterval(tick,1000);
+var MO=["کانوونا دووێ","شوبات","ئادار","نیسان","ئایار","حوزەیران","تەمموز","ئاب","ئەیلوول","تشرینا ئێکێ","تشرینا دووێ","کانوونا ئێکێ"],WD=["یەکشەمب","دووشەمب","سێشەمب","چوارشەمب","پێنجشەمب","ئەینی","شەمبی"];
+function p2(n){return(n<10?"0":"")+n}
+function hms(d){return p2(d.getHours())+":"+p2(d.getMinutes())+":"+p2(d.getSeconds())}
+function clock(){var d=new Date();$("dt").textContent=WD[d.getDay()]+"، "+d.getDate()+" "+MO[d.getMonth()]+" "+d.getFullYear();$("tm").textContent=hms(d)}
+clock();setInterval(clock,1000);
+$("rb").onclick=function(){left=SEC;live();liveIQ();beep(660)};
+var T="https://qamaralfajr.com/System/production/exchange_rates.php";
+var SRC=["https://api.allorigins.win/raw?url="+encodeURIComponent(T),"https://corsproxy.io/?url="+encodeURIComponent(T),"https://falling-resonance-d9c0.hadiyahya745.workers.dev/",T];
+function getT(i){if(i>=SRC.length)return Promise.reject();return fetch(SRC[i],{cache:"no-store"}).then(function(r){return r.text()}).then(function(t){if(t.indexOf("IQD")<0)throw 0;return t}).catch(function(){return getT(i+1)})}
+function setUSD(v){v=Number(v);if(!(v>0)||v==u0)return;var p=(v/u0-1)*100;C.forEach(function(c){D[c[0]]=(D[c[0]]||0)+p;F[c[0]]=1});u0=v;$("usd").value=v;all();beep(p>0?880:420,.2)}
+$("usd").addEventListener("change",function(){setUSD(this.value)});
+function liveIQ(){try{getT(0).then(function(t){var q={};new DOMParser().parseFromString(t,"text/html").querySelectorAll("tr").forEach(function(tr){var td=tr.querySelectorAll("td");if(td.length<3)return;var m=((td[td.length-1].textContent.match(/[A-Za-z]{3}/)||[""])[0]).toUpperCase(),s=parseFloat(td[0].textContent.replace(/,/g,"")),b=parseFloat(td[1].textContent.replace(/,/g,""));if(m&&s&&b)q[m]=[s,b]});if(!q.IQD)return;var mid=function(k){return(q[k][0]+q[k][1])/2};$("sp").value=((q.IQD[0]-q.IQD[1])/(q.IQD[0]+q.IQD[1])*100).toFixed(2);if(q.TRY)R.TRY=mid("TRY")/100;["EUR","GBP","CAD","AUD","CHF"].forEach(function(k){if(q[k])R[k]=100/mid(k)});setUSD(mid("IQD")/100);all();setLU(true)}).catch(function(){})}catch(e){}}
+init();
+</script>
+</body>
+</html>
